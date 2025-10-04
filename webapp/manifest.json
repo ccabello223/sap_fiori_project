@@ -94,12 +94,23 @@
           "target": [
             "TargetMainView"
           ]
+        },
+        {
+          "name": "detail", 
+          "pattern": "detail/{invoicePath}",
+          "target": [
+            "TargetDetailView"
+          ]
         }
       ],
       "targets": {
         "TargetMainView": {
           "id": "MainView",
           "name": "MainView"
+        },
+        "TargetDetailView": {
+          "id": "DetailView",
+          "name": "DetailView"
         }
       }
     },

@@ -1,0 +1,118 @@
+<!-- <mvc:View controllerName="cacsfiori.invoices.controller.DetailView"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+
+    <Page id="detailPage" title="{i18n>detailTitle}" showNavButton="true" navButtonPress="onNavBack">
+        <content>
+            <ObjectHeader
+                id="IdHeader"
+                title="{ShipName}"
+                number="{ parts: [ {path: 'ExtendedPrice'}, {path: 'Currency'} ], 
+                          type: 'sap.ui.model.type.Currency',
+                          formatOptions: { showMeasure: false } }"
+                numberUnit="{Currency}">
+            </ObjectHeader>
+
+            <ObjectAttribute id="IdAttribute" title="{i18n>Country}" text="{Country}"/>
+            <ObjectAttribute id="IdAttribute2" title="{i18n>OrderID}" text="{OrderID}"/>
+            <ObjectAttribute id="IdAttribute3" title="{i18n>Freight}" text="{Freight}"/>
+        </content>
+    </Page>
+
+</mvc:View> -->
+<mvc:View
+    controllerName="cacsfiori.invoices.controller.DetailView"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+>
+    <Shell id="_IDGenShell">
+        <App id="_IDGenApp">
+            <Page
+                id="pageDetails"
+                title="Detalle de Factura"
+                showNavButton="true"
+                navButtonPress="onNavBack"
+            >
+                <content>
+                    <Table
+                        id="detailTable"
+                        inset="false"
+                        items="{
+                    path: '/Invoices'
+                }"
+                    >
+                        <headerToolbar>
+                            <Toolbar id="idToolHeader">
+                                <Title
+                                    id="idMainTitle"
+                                    text="Productos de la Factura"
+                                    level="H2"
+                                />
+                            </Toolbar>
+                        </headerToolbar>
+
+                        <columns>
+                            <Column id="idColumn1">
+                                <Text
+                                    id="idTextProducto"
+                                    text="Producto"
+                                />
+                            </Column>
+                            <Column id="idColumn2">
+                                <Text
+                                    id="idTextPrecioU"
+                                    text="Precio Unitario"
+                                />
+                            </Column>
+                            <Column id="idColumn3">
+                                <Text
+                                    id="idTextCantidad"
+                                    text="Cantidad"
+                                />
+                            </Column>
+                            <Column id="idColumn4">
+                                <Text
+                                    id="idTextPrecioT"
+                                    text="Precio Total"
+                                />
+                            </Column>
+                            <Column id="idColumn5">
+                                <Text
+                                    id="idTextremitentes"
+                                    text="Nombre del remitente"
+                                />
+                            </Column>
+                        </columns>
+
+                        <items>
+                            <ColumnListItem id="idColumnList">
+                                <cells>
+                                    <Text
+                                        id="idTextProductName"
+                                        text="{ProductName}"
+                                    />
+                                    <Text
+                                        id="idTextUnitPrice"
+                                        text="{UnitPrice}"
+                                    />
+                                    <Text
+                                        id="idTextQuantity"
+                                        text="{Quantity}"
+                                    />
+                                    <Text
+                                        id="idTextExtendedPrice"
+                                        text="{ExtendedPrice}"
+                                    />
+                                    <Text
+                                        id="idTextShipperName"
+                                        text="{ShipperName}"
+                                    />
+                                </cells>
+                            </ColumnListItem>
+                        </items>
+                    </Table>
+                </content>
+            </Page>
+        </App>
+    </Shell>
+</mvc:View>

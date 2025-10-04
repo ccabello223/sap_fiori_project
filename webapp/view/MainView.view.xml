@@ -38,10 +38,14 @@
                               headerText="{i18n>invoicesHeaderList}"
                               class="sapUiResponsiveMargin"
                               width="auto"
-                              items="{/Invoices}">
+                              items="{/Invoices}"
+                              mode="SingleSelectMaster"
+                              itemPress=".onListItemPress"
+                              >
 
                               <items>
                                 <ObjectListItem id="objectInvoicesItem" title="{ShipName} - {Country}"
+                                                type="Active"
                                                 number="{ parts: [ {path: 'ExtendedPrice'},
                                                                    {path: 'selectionScreen>/Currency'}],
                                                           type: 'sap.ui.model.type.Currency',
